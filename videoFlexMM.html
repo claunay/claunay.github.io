@@ -76,20 +76,92 @@
 				  
 				  Claire Launay, Jonathan Vacher, Ruben Coen-Cagli</p>
 				  
+				  <h3>Abstract</h3>
+				  
 				  <p align="justify">
 				    We propose a family of probabilistic segmentation algorithms for videos that rely on a generative model capturing static and dynamic natural image statistics. 
-				  Our framework adopts flexibly regularized mixture models (FlexMM, Vacher 2022) , an efficient method to combine mixture distributions across different data sources. 
-				  FlexMMs of Student-t distributions successfully segment static natural images, through uncertainty-based information sharing between hidden layers of CNNs. 
-				  We further extend this approach to videos and exploit FlexMM to propagate segment labels across space and time. We show that temporal propagation improves temporal consistency of segmentation, reproducing qualitatively a key aspect of human perceptual grouping. 
-				  We also show that optical flows of natural movies are well described by Student-t distributions and thus can be integrated in our temporal FlexMM. 
-				  Exploiting motion cues through optical flows further enhances the segmentation of each frame of natural movies.
+					Our framework adopts flexibly regularized mixture models (FlexMM) (Vacher 2022), an efficient method to combine mixture distributions across different data sources. 
+					FlexMMs of Student-t distributions successfully segment static natural images, through uncertainty-based information sharing between hidden layers of CNNs. 
+					We further extend this approach to videos and exploit FlexMM to propagate segment labels across space and time. 
+					We show that temporal propagation improves temporal consistency of segmentation, reproducing qualitatively a key aspect of human perceptual grouping. 
+					Besides, Student-t distributions can capture statistics of optical flows of natural movies, which represent apparent motion in the video. 
+					Integrating these motion cues in our temporal FlexMM further enhances the segmentation of each frame of natural movies. 
+					Our probabilistic dynamic segmentation algorithms thus provide a new framework to study uncertainty in human dynamic perceptual segmentation.
 					</p>
 					
+					
 					<p align="justify">
-					<h3>Paper </h3>
+					
 					A communication paper for the 2022 ICIP conference can be found <a href="data/Icip2022.pdf" target="_blank">here</a>.
 					
+					</p>
 					
+				<h3>Additional content </h3>
+				
+				
+				<p align="justify">
+				Here are four videos comparing the results of static and dynamic segmentation algorithms based on FlexMMs.
+					</p>
+				
+				<p align="justify">
+				High temporal stability:
+				
+				<br>
+				
+				<table >
+				<thead>
+				<tr><td style='text-align:center'>Original image</td> <td style='text-align:center'>Ground truth</td> <td style='text-align:center'>Temp prop + OF segmentation</td> <td style='text-align:center'>Temp prop segmentation</td> <td style='text-align:center'>Indep SIL1 segmentation</td></tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td><img src="data/videoFlexMM/bike-packing_img.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Original image" ></td>
+				<td><img src="data/videoFlexMM/bike-packing_gt.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Ground truth" ></td>
+				<td><img src="data/videoFlexMM/bike-packing_wof.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt "Temp prop + OF segmentation">  </td>
+				<td><img src="data/videoFlexMM/bike-packing_tmp.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Indep SIL1 segmentation">  </td>
+				<td><img src="data/videoFlexMM/bike-packing_indep_SIL1.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt= "Indep SIL16 segmentation"> </td>
+				</tr>
+				<tr>
+				<td><img src="data/videoFlexMM/hike_img.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Original image" ></td>
+				<td><img src="data/videoFlexMM/hike_gt.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Ground truth" ></td>
+				<td><img src="data/videoFlexMM/hike_wof.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt "Temp prop + OF segmentation">  </td>
+				<td><img src="data/videoFlexMM/hike_tmp.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Indep SIL1 segmentation">  </td>
+				<td><img src="data/videoFlexMM/hike_indep_SIL1.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt= "Indep SIL16 segmentation"> </td>
+				</tr>
+				</tbody>
+				</table>
+				</p>
+				
+				
+				<p align="justify">
+				Low temporal stability:
+				
+				<br>
+				
+				<table >
+				<thead>
+				<tr><td style='text-align:center'>Original image</td> <td style='text-align:center'>Ground truth</td> <td style='text-align:center'>Temp prop + OF segmentation</td> <td style='text-align:center'>Temp prop segmentation</td> <td style='text-align:center'>Indep SIL1 segmentation</td></tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td><img src="data/videoFlexMM/longboard_img.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Original image" ></td>
+				<td><img src="data/videoFlexMM/longboard_gt.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Ground truth" ></td>
+				<td><img src="data/videoFlexMM/longboard_wof.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt "Temp prop + OF segmentation">  </td>
+				<td><img src="data/videoFlexMM/longboard_tmp.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Indep SIL1 segmentation">  </td>
+				<td><img src="data/videoFlexMM/longboard_indep_SIL1.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt= "Indep SIL16 segmentation"> </td>
+				</tr>
+				<tr>
+				<td><img src="data/videoFlexMM/color-run_img.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Original image" ></td>
+				<td><img src="data/videoFlexMM/color-run_gt.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Ground truth" ></td>
+				<td><img src="data/videoFlexMM/color-run_wof.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt "Temp prop + OF segmentation">  </td>
+				<td><img src="data/videoFlexMM/color-run_indep_SIL1.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt="Indep SIL1 segmentation">  </td>
+				<td><img src="data/videoFlexMM/color-run_indep_SIL16.gif" width="200" height=auto style="margin: 10px 10px 0px 0px;" alt= "Indep SIL16 segmentation"> </td>
+				</tr>
+				</tbody>
+				</table>
+				</p>			
+					
+					
+					<p align="justify">
 					If you have any question, feel free to send us an email, we'll be happy to answer them.
                   </p>
                </div>
